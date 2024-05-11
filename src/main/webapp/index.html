@@ -1,243 +1,233 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="shortcut icon" href="assets/img/redhat.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour & Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Iconscout Link  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
 
-  <title>JBoss EAP 8 on Red Hat OpenShift</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/helloworld.css" rel="stylesheet">
 </head>
-
 <body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-hiking"></i> travel.com</a>
+        <nav class="navbar">
+            <div id="nav-close" class="fas fa-times"></div>
+            <a href="#home">home</a>
+            <a href="#category">Adventures</a>
+            <a href="#packages">packages</a>
+            <a href="#contact">contact</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div> 
+            <div id="search-btn" class="fas fa-search"></div>
+          
+        </div>
+    </header>
 
-  <!-- navbar -->
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <a class="navbar-brand my-0 mr-md-auto font-weight-normal" href="/index.html">
-        <img src="img/eap-logo.png" height="36">&nbsp;|&nbsp;<img
-            src="img/Asset-Red_Hat-Logo_page-Logo-RGB.svg" height="36">
-    </a>
-    <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform">Features</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform#contact-form">Contact Sales</a>
-  </div>
-  <!-- end navbar -->
-
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">JBoss EAP 8 on Red Hat OpenShift</h1>
-    <p class="lead">Congratulations! You have deployed your first successful JBoss EAP 8 application, running on Red Hat OpenShift.</p>
-
-    <p>This page is served by your application. The source is in <code>src/main/webapp/index.html</code>.</p>
-  </div>
-
-  <div class="container">
-    <div class="card-deck mb-2 text-center">
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Java Runtime</h4>
-        </div>
-        <div class="card-body">
-          <img src="img/duke.png" height="50px">
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>Click below to retrieve Java details from your JBoss EAP instance</li>
-          </ul>
-            <button type="button" id="javadetails" class="btn btn-lg btn-block btn-primary">Get Java Details</button>
-            <ul class="list-unstyled mt-3 mb-4" id="javadetailsresult"></ul>
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">JBoss EAP Server Configuration</h4>
-        </div>
-        <div class="card-body">
-          <img src="img/eap-logo.png" height="50px">
-          <ul class="list-unstyled mt-3 mb-4">
-            <li></li>
-            <li>Click below to retrieve all system properties from JBoss EAP</li>
-          </ul>
-            <button type="button" id="serverconfig" class="btn btn-lg btn-block btn-primary">Server Properties</button>
-            <ul class="list-unstyled mt-3 mb-4" id="serverconfigresult"></ul>
-        </div>
-      </div>
-      <div class="card mb-4 box-shadow">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">OpenShift Configuration</h4>
-        </div>
-        <div class="card-body">
-          <img src="img/openshift-logo.png" height="50px">
-          <ul class="list-unstyled mt-3 mb-4">
-            <li></li>
-            <li>Click below to retrieve runtime properties from OpenShift</li>
-          </ul>
-            <button type="button" id="openshiftconfig" class="btn btn-lg btn-block btn-primary">OpenShift Configuration</button>
-            <ul class="list-unstyled mt-3 mb-4" id="openshiftconfigresult"></ul>
-        </div>
-      </div>
+    <div class="search-form">
+        <div id="close-search" class="fas fa-times"></div>
+        <form action="">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        </form>
     </div>
 
-    <br />
-  </div>
-
-
-  <div class="container">
-
-
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-      <div class="row">
-        <div class="col-6 col-md">
-          <h5>Features</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted"
-                href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform/features">Optimized for cloud</a></li>
-            <li><a class="text-muted"
-                href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform/features">Lightweight, flexible architecture</a></li>
-            <li><a class="text-muted"
-                href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform/features">Flexible management, configuration, and administration</a></li>
-            <li><a class="text-muted"
-                href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform/features">More productive developers</a></li>
-          </ul>
+    <section class="home" id="home">
+   
+        <div class="wrapper">
+           
+                <div class="box" style="background: url(images/home1.jpg) no-repeat;">
+                <div class="content">
+                    <span>never stop</span>
+                    <h3>exploring</h3>
+                    <p>Travel.com offers best deals on India tour packages.</p>
+                    <a href="#category" class="btn">get started</a>
+                </div>
+                </div>  
         </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted"
-                href="https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/8-beta">Documentation</a>
-            </li>
-            <li><a class="text-muted" href="https://www.redhat.com/en/technologies/jboss-middleware/application-platform#contact-form">Contact Sales</a></li>
-          </ul>
+    </section>
+
+    <!-- Adventure section -->
+
+    <section class="category" id="category">
+
+        <h1 class="heading">Adventure Idea!</h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <img src="images/category-1.jpg" alt="BungeeJumpingImg">
+                <h3>bungee jump</h3>
+                <p>Bungee jumping is an activity that involves a person jumping from a great height while connected to a large elastic cord.</p>
+                <a href="https://en.wikipedia.org/wiki/Bungee_jumping" class="btn">read more</a>
+            </div>
+    
+            <div class="box">
+                <img src="images/category-2.jpg" alt="ZipLinesImg">
+                <h3>zip lines</h3>
+                <p>A zip-line, zip line, zip-wire, or flying fox is a pulley suspended on a cable, usually made of stainless steel, mounted on a slope.</p>
+                <a href="https://en.wikipedia.org/wiki/Zip_line" class="btn">read more</a>
+            </div>
+    
+            <div class="box">
+                <img src="images/category-3.jpg" alt="canoeingImg">
+                <h3>Canoeing</h3>
+                <p>Canoeing is an activity which involves paddling a canoe with a single-bladed paddle.</p>
+                <a href="https://en.wikipedia.org/wiki/Canoeing" class="btn">read more</a>
+            </div>
+    
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md">
-          <img class="mb-2" src="img/redhat.png" alt="" width="24" height="24">
-          <small class="d-block mb-3 text-muted">&copy; 2023</small>
+    
+    </section>
+    <section class="packages" id="packages">
+
+        <h1 class="heading">popular packages</h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/img-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Manali Package</h3>
+                    <p>Kullu Manali Shimla has always been a very popular destination for the old, young travelers as well as newly married couples who look for cheapest Manali tour packages &amp; Manali Honeymoon Packages to experience the perfect solitude and calmness at its best.</p>
+                    <div class="price">Rs 5,999 - Rs 8,999</div>
+                    <a href="#contact" class="btn">explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/img-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Goa Package</h3>
+                    <p>The most popular beach of Goa, Baga is located close to Calangute beach, around 30 Km North of Panaji. Baga is popular for its nightlife with some very famous clubs such as Brittos, Titos and Mambos.There is also a range of water sports that you can try your hands at.</p>
+                    <div class="price">Rs 7,999 - Rs 12,999</div>
+                    <a href="#contact" class="btn">explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/img-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Delhi Package</h3>
+                    <p>Boasting cultural diversity and rich heritage, Delhi is home to several temples, tombs, gardens, forts, museums, markets and more. We take you to some of the best spots in the city. Pick the best packages from here and enjoy the tour of Delhi with guide.</p>
+                    <div class="price">Rs 2,999 - Rs 8,999</div>
+                    <a href="#contact" class="btn">explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/img-4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Jaipur Package</h3>
+
+                    <p>We organise Jaipur &amp; Rajasthan tours that offer incredible attractions like Forts and Palaces, Deserts, Traditional Villages, colorful cattle fairs, sacred places, camel safaris, beautiful lakes, hill stations and the people. </p>
+                    <div class="price">Rs 11,999 - Rs15,999</div>
+
+                    <p>We organise Jaipur & Rajasthan tours that offer incredible attractions like Forts and Palaces, Deserts, Traditional Villages, colorful cattle fairs, sacred places, camel safaris, beautiful lakes, hill stations and the people. </p>
+                    <div class="price">Rs 11,999 - Rs 15,999</div>
+
+                    <a href="#contact" class="btn">explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/img-5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Kerala Package</h3>
+                    <p>A trip to Kerala is always an experience through greenery to the hills and its climate. Browse through our hand-picked Kerala tour packages prepared for you. Our experts are also available to prepare customised tourism packages</p>
+                    <div class="price">Rs 4,999 - Rs 9,999</div>
+                    <a href="#contact" class="btn">explore now</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <div class="image">
+                    <img src="images/img-6.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Darjeeling Package</h3>
+                    <p>A trip to Darjeeling will include a ride on the famous Himalayan Railway, a visit to Tiger Hill, or a tour of the stunning landscaped gardens here. Activities like hiking and boating. Do not miss out on a trip to Darjeeling Is famous Mall Road</p>
+                    <div class="price">Rs 20,000 - Rs 25,000</div>
+                    <a href="#contact" class="btn">explore now</a>
+                </div>
+            </div>
+    
         </div>
-    </footer>
-  </div>
+    
+    </section>
+    <section class="contact" id="contact">
+    
+    <div class="wrapper1">
+        <div class="title1">
+          <h1>Contact us</h1>
+        </div>
+        <div class="contact-form">
+            <form method = "post" action = "contact_us.php">
+          <div class="input-fields">
+            
+            <input type="text" class="input"  placeholder="Name" name="name">
+            <input type="email" class="input"  placeholder="Email Address" name="email" pattern=".+@gmail\.com">
+            <input type="phone" class="input"  placeholder="Phone" name="phone">
+            <input type="text" class="input"  placeholder="Subject" name="subject">
+          </div>
+          <div class="msg">
+            <textarea placeholder="Message" name="message"></textarea> <br>
+            <div class="btn1"><button type="submit">send <i class="uil uil-message"></i></div>
+          </div>
+          </form>
+        </div>
+        </div> 
+    
+    </section>
+    <section class="footer">
 
-
-
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script
-  src="https://code.jquery.com/jquery-3.6.3.min.js"
-  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-  crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-  $( document ).ready( function() {
-    var javadetailsvisible = false;
-    var eapdetailsvisible = false;
-    var ocpdetailsvisible = false;
-
-      $( '#javadetails' ).click( function( event ) {
-        if (!javadetailsvisible){
-          javadetailsvisible = true;
-          var javadetailsElement = document.getElementById('javadetailsresult');
-          javadetailsElement.style.display = 'block';
-          event.preventDefault();
-
-          var result = $( '#javadetailsresult' );
-          console.log("result:" + result);
-          result.removeClass( 'invalid' );
-
-          $.ajax( 'services/javadetails', {
-              type:'GET',
-              success:function ( data ) {
-                  console.log("success: " + JSON.stringify(data));
-                  $( '#javadetailsresult' ).empty();
-                  for (const [key, value] of Object.entries(data)) {
-                    $( '#javadetailsresult' ).append('<li><b>' + key + "</b> = <code>" + value + "</code></li>");
-                  }
-              },
-              error: function(err) {
-                console.log("error: " + err);
-              }
-          })
-        } else {
-          javadetailsvisible = false;
-          var javadetailsElement = document.getElementById('javadetailsresult');
-          javadetailsElement.style.display = 'none';
-        }
-      });
-
-      $( '#serverconfig' ).click( function( event ) {
-        if (!eapdetailsvisible){
-          eapdetailsvisible = true;
-          var eapdetailsElement = document.getElementById('serverconfigresult');
-          eapdetailsElement.style.display = 'block';
-          event.preventDefault();
-
-          var result = $( '#serverconfigresult' );
-          console.log("result:" + result);
-          result.removeClass( 'invalid' );
-
-          $.ajax( 'services/serverconfig', {
-              type:'GET',
-              success:function ( data ) {
-                  console.log("success: " + JSON.stringify(data));
-                  $( '#serverconfigresult' ).empty();
-                  for (const [key, value] of Object.entries(data)) {
-                    $( '#serverconfigresult' ).append('<li><b>' + key + "</b> = <code>" + value + "</code></li>");
-
-                  }
-              },
-              error: function(err) {
-                console.log("error: " + err);
-              }
-          })
-        } else {
-          eapdetailsvisible = false;
-          var eapdetailsElement = document.getElementById('serverconfigresult');
-          eapdetailsElement.style.display = 'none';
-        }
-      });
-
-      $( '#openshiftconfig' ).click( function( event ) {
-        if (!ocpdetailsvisible){
-          ocpdetailsvisible = true;
-          var ocpdetailsElement = document.getElementById('openshiftconfigresult');
-          ocpdetailsElement.style.display = 'block';
-          event.preventDefault();
-
-          var result = $( '#openshiftconfigresult' );
-          console.log("result:" + result);
-          result.removeClass( 'invalid' );
-
-          $.ajax( 'services/openshiftconfig', {
-              type:'GET',
-              success:function ( data ) {
-                  console.log("success: " + JSON.stringify(data));
-                  $( '#openshiftconfigresult' ).empty();
-                  for (const [key, value] of Object.entries(data)) {
-                    $( '#openshiftconfigresult' ).append('<li><b>' + key + "</b> = <code>" + value + "</code></li>");
-
-                  }
-              },
-              error: function(err) {
-                console.log("error: " + err);
-              }
-          })
-        } else {
-          ocpdetailsvisible = false;
-          var ocpdetailsElement = document.getElementById('openshiftconfigresult');
-          ocpdetailsElement.style.display = 'none';
-        }
-      });
-
-  }); // (document).ready
-</script>
-
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#home">home</a>    
+                <a href="#packages">packages</a>
+                <a href="#query">query</a>
+            </div>
+    
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#contact">ask questions</a>
+                <a href="#">terms of use</a>
+                <a href="#">privacy policy</a>
+            </div>
+    
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="tel:+918115585868"> <i class="fas fa-phone"></i> +91 8115585868 </a>
+                <a href="mailto: yashsrivastav8115@gmail.com"> <i class="fas fa-envelope"></i> yashsrivastav8115@gmail.com </a>
+                <a href="#"> <i class="fas fa-map"></i> Lucknow, india - 226010 </a>
+            </div>
+    
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.facebook.com/yash.srivastav0"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="https://www.instagram.com/yash_srivastav_"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="https://www.linkedin.com/in/yash-srivastav/"> <i class="fab fa-linkedin"></i> linkedin </a>
+                <a href="https://github.com/Yash-srivastav16"> <i class="fab fa-github"></i> github </a>
+            </div>
+        </div>
+        <div class="credit">created by <span>yash srivastav</span> | all rights reserved!</div>
+    </section>
+    <!-- footer section ends -->
+    <script src="js/script.js"></script>
 </body>
-
 </html>
